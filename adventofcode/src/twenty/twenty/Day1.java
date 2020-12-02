@@ -26,7 +26,6 @@ public class Day1 {
     }
 
     private static long productOfTwoEntries(List<Integer> entries) {
-        Collections.sort(entries);
         Set<Integer> seen = new HashSet<>();
         for (Integer entry : entries) {
             if (seen.contains(2020 - entry)) {
@@ -38,6 +37,7 @@ public class Day1 {
     }
 
     private static long productOfThreeEntries(List<Integer> entries) {
+        Collections.sort(entries);
         int i = 0;
         while (i < entries.size() - 2) {
             int j = i + 1;
