@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * See <a href="https://adventofcode.com/2020/day/2">Day 2 question</a>
+ */
 public class Day2 {
     int min, max;
     char match;

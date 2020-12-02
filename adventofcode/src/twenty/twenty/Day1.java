@@ -10,6 +10,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * See <a href="https://adventofcode.com/2020/day/1">Day 1 question</a>
+ */
 public class Day1 {
     public static void main(String[] args) {
         String fileName = "adventofcode/resources/day1_entries";
