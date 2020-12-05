@@ -1,31 +1,39 @@
 package twenty.twenty;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import common.Day;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * See <a href="https://adventofcode.com/2020/day/1">Day 1 question</a>
  */
-public class Day1 {
-    public static void main(String[] args) {
-        String fileName = "adventofcode/resources/day1_entries";
-        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-            List<Integer> inputList = stream.map(Integer::valueOf).collect(Collectors.toList());
-            System.out.println(productOfTwoEntries(inputList));
-            System.out.println(productOfThreeEntries(inputList));
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex);
-        }
+public class Day1 extends Day {
+    List<Integer> entries;
+
+    protected Day1() {
+        super(1, 2020);
+        entries = inputList.stream().map(Integer::valueOf).collect(Collectors.toList());
     }
 
-    private static long productOfTwoEntries(List<Integer> entries) {
+    public static void main(String[] args) {
+        new Day1().printResults();
+    }
+
+    @Override
+    protected Object part1() {
+        return productOfTwoEntries();
+    }
+
+    @Override
+    protected Object part2() {
+        return productOfThreeEntries();
+    }
+
+    private long productOfTwoEntries() {
         Set<Integer> seen = new HashSet<>();
         for (Integer entry : entries) {
             if (seen.contains(2020 - entry)) {
@@ -36,7 +44,7 @@ public class Day1 {
         return 0L;
     }
 
-    private static long productOfThreeEntries(List<Integer> entries) {
+    private long productOfThreeEntries() {
         Collections.sort(entries);
         int i = 0;
         while (i < entries.size() - 2) {

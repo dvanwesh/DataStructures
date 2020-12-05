@@ -1,32 +1,37 @@
 package twenty.twenty;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import common.Day;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.function.Predicate;
 
 /**
  * See <a href="https://adventofcode.com/2020/day/4">Day 4 question</a>
  */
-public class Day4 {
-    private static List<String> inputList;
+public class Day4 extends Day {
+
+    protected Day4() {
+        super(4, 2020);
+    }
 
     public static void main(String[] args) {
-        String fileName = "adventofcode/resources/day4_entries";
-        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-            inputList = stream.collect(Collectors.toList());
-            Day4 day4 = new Day4();
-            List<Passport> passports = day4.loadPassports();
-            long ans1 = day4.numberOfPassportsWithRequiredFields(passports);
-            long ans2 = day4.numberOfValidPassports(passports);
-            System.out.println(ans1);
-            System.out.println(ans2);
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex);
-        }
+        new Day4().printResults();
+    }
+
+    @Override
+    protected Object part1() {
+        return verifyPassports(Passport::hasRequiredFields);
+    }
+
+    @Override
+    protected Object part2() {
+        return verifyPassports(Passport::isValid);
+    }
+
+    private Object verifyPassports(Predicate<Passport> verifyFunction) {
+        List<Passport> passports = loadPassports();
+        return passports.stream().filter(verifyFunction).count();
     }
 
     private List<Passport> loadPassports() {
@@ -78,14 +83,6 @@ public class Day4 {
             passports.add(p);
         }
         return passports;
-    }
-
-    private long numberOfPassportsWithRequiredFields(List<Passport> passports) {
-        return passports.stream().filter(Passport::hasRequiredFields).count();
-    }
-
-    private long numberOfValidPassports(List<Passport> passports) {
-        return passports.stream().filter(Passport::isValid).count();
     }
 
     class Passport {
