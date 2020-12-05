@@ -1,13 +1,13 @@
 package twenty.twenty;
 
-import common.Day;
+import common.Challenge;
 
 import java.util.List;
 
 /**
  * See <a href="https://adventofcode.com/2020/day/3">Day 3 question</a>
  */
-public class Day3 extends Day {
+public class Day3 extends Challenge {
     private static List<String> grid;
 
     protected Day3() {

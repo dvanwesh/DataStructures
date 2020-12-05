@@ -1,6 +1,6 @@
 package twenty.twenty;
 
-import common.Day;
+import common.Challenge;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * See <a href="https://adventofcode.com/2020/day/1">Day 1 question</a>
  */
-public class Day1 extends Day {
+public class Day1 extends Challenge {
     List<Integer> entries;
 
     protected Day1() {

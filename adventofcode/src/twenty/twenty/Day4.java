@@ -1,6 +1,6 @@
 package twenty.twenty;
 
-import common.Day;
+import common.Challenge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 /**
  * See <a href="https://adventofcode.com/2020/day/4">Day 4 question</a>
  */
-public class Day4 extends Day {
+public class Day4 extends Challenge {
 
     protected Day4() {
         super(4, 2020);

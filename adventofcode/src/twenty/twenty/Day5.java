@@ -1,6 +1,6 @@
 package twenty.twenty;
 
-import common.Day;
+import common.Challenge;
 
 import java.util.Comparator;
 import java.util.Set;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * See <a href="https://adventofcode.com/2020/day/5">Day 5 question</a>
  */
-public class Day5 extends Day {
+public class Day5 extends Challenge {
     protected Day5() {
         super(5, 2020);
     }

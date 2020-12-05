@@ -1,11 +1,11 @@
 package twenty.twenty;
 
-import common.Day;
+import common.Challenge;
 
 /**
  * See <a href="https://adventofcode.com/2020/day/2">Day 2 question</a>
  */
-public class Day2 extends Day {
+public class Day2 extends Challenge {
     int min, max;
     char match;
     String password;

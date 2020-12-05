@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public abstract class Day {
+public abstract class Challenge {
     private final int day;
     private final int year;
     private final String YEAR = "<year>";
@@ -15,7 +15,7 @@ public abstract class Day {
     private final String FILE_PATH = "adventofcode/resources/" + YEAR + "/day" + DAY + "_entries";
     protected static List<String> inputList;
 
-    protected Day(int day, int year) {
+    protected Challenge(int day, int year) {
         this.day = day;
         this.year = year;
         loadInputAsStrings(FILE_PATH.replaceAll(YEAR, String.valueOf(year)).replaceAll(DAY, String.valueOf(day)));
