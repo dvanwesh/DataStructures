@@ -15,16 +15,16 @@ public class Day5 extends Challenge {
     }
 
     public static void main(String[] args) {
-        new Day5().printResults();
+        new Day5().executeTasks();
     }
 
     @Override
-    protected Object part1() {
+    protected Object task1() {
         return inputList.stream().mapToInt(this::calculateSeatId).max().getAsInt();
     }
 
     @Override
-    protected Object part2() {
+    protected Object task2() {
         Set<Integer> seats = inputList.stream().map(this::calculateSeatId).collect(Collectors.toSet());
         int firstOccupied = seats.stream().min(Comparator.naturalOrder()).get();
         int lastOccupied = seats.stream().max(Comparator.naturalOrder()).get();

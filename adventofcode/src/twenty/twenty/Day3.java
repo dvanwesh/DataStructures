@@ -15,17 +15,17 @@ public class Day3 extends Challenge {
     }
 
     public static void main(String[] args) {
-        new Day3().printResults();
+        new Day3().executeTasks();
     }
 
     @Override
-    protected Object part1() {
+    protected Object task1() {
         grid = inputList;
         return treesMetWithSlope(3, 1);
     }
 
     @Override
-    protected Object part2() {
+    protected Object task2() {
         grid = inputList;
         return productOfGivenSlopes(new int[][]{{1, 1}, {3, 1}, {5, 1}, {7, 1}, {1, 2}});
     }

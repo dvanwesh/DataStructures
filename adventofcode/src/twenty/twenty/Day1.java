@@ -20,16 +20,16 @@ public class Day1 extends Challenge {
     }
 
     public static void main(String[] args) {
-        new Day1().printResults();
+        new Day1().executeTasks();
     }
 
     @Override
-    protected Object part1() {
+    protected Object task1() {
         return productOfTwoEntries();
     }
 
     @Override
-    protected Object part2() {
+    protected Object task2() {
         return productOfThreeEntries();
     }
 

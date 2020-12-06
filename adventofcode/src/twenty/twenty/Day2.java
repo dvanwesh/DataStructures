@@ -16,16 +16,16 @@ public class Day2 extends Challenge {
     }
 
     public static void main(String[] args) {
-        new Day2().printResults();
+        new Day2().executeTasks();
     }
 
     @Override
-    protected Object part1() {
+    protected Object task1() {
         return inputList.stream().filter(this::isValidForPolicy1).count();
     }
 
     @Override
-    protected Object part2() {
+    protected Object task2() {
         return inputList.stream().filter(this::isValidForPolicy2).count();
     }
 

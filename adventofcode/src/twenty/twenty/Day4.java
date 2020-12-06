@@ -16,16 +16,16 @@ public class Day4 extends Challenge {
     }
 
     public static void main(String[] args) {
-        new Day4().printResults();
+        new Day4().executeTasks();
     }
 
     @Override
-    protected Object part1() {
+    protected Object task1() {
         return verifyPassports(Passport::hasRequiredFields);
     }
 
     @Override
-    protected Object part2() {
+    protected Object task2() {
         return verifyPassports(Passport::isValid);
     }
 
@@ -39,48 +39,42 @@ public class Day4 extends Challenge {
         if (inputList == null || inputList.isEmpty()) {
             return passports;
         }
-        Passport p = new Passport();
+        Passport passport;
         String key, val;
-        for (String line : inputList) {
-            if (line.trim().length() == 0) {
-                passports.add(p);
-                p = new Passport();
-                continue;
-            }
-            String[] fields = line.split(" ");
+        for (String passportPage : getResourceAsString().split("\n\n")) {
+            passport = new Passport();
+            String[] fields = passportPage.replaceAll("\n", " ").split(" ");
             for (String field : fields) {
                 key = field.split(":")[0];
                 val = field.split(":")[1];
                 switch (key) {
                     case "byr":
-                        p.setByr(val);
+                        passport.setByr(val);
                         break;
                     case "iyr":
-                        p.setIyr(val);
+                        passport.setIyr(val);
                         break;
                     case "eyr":
-                        p.setEyr(val);
+                        passport.setEyr(val);
                         break;
                     case "hgt":
-                        p.setHgt(val);
+                        passport.setHgt(val);
                         break;
                     case "hcl":
-                        p.setHcl(val);
+                        passport.setHcl(val);
                         break;
                     case "ecl":
-                        p.setEcl(val);
+                        passport.setEcl(val);
                         break;
                     case "pid":
-                        p.setPid(val);
+                        passport.setPid(val);
                         break;
                     case "cid":
-                        p.setCid(val);
+                        passport.setCid(val);
                         break;
                 }
             }
-        }
-        if (inputList.get(inputList.size() - 1).trim().length() > 0) {
-            passports.add(p);
+            passports.add(passport);
         }
         return passports;
     }

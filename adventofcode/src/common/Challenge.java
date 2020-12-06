@@ -29,12 +29,22 @@ public abstract class Challenge {
         }
     }
 
-    protected abstract Object part1();
+    protected String getResourceAsString() {
+        try {
+            return Files.readString(Paths.get(FILE_PATH.replaceAll(YEAR, String.valueOf(year)).
+                replaceAll(DAY, String.valueOf(day))));
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+        }
+        return "";
+    }
 
-    protected abstract Object part2();
+    protected abstract Object task1();
 
-    protected void printResults() {
-        System.out.println("Part1: " + part1());
-        System.out.println("Part2: " + part2());
+    protected abstract Object task2();
+
+    protected void executeTasks() {
+        System.out.println("Part1: " + task1());
+        System.out.println("Part2: " + task2());
     }
 }
