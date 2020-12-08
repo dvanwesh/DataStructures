@@ -10,23 +10,36 @@ import java.util.stream.Stream;
 public abstract class Challenge {
     private final int day;
     private final int year;
+    private final String DEFAULT_DELIMITER = System.lineSeparator();
     private final String YEAR = "<year>";
     private final String DAY = "<day>";
     private final String FILE_PATH = "adventofcode/resources/" + YEAR + "/day" + DAY + "_entries";
     protected static List<String> inputList;
+    protected static String[] inputArry;
 
     protected Challenge(int day, int year) {
         this.day = day;
         this.year = year;
-        loadInputAsStrings(FILE_PATH.replaceAll(YEAR, String.valueOf(year)).replaceAll(DAY, String.valueOf(day)));
+        inputList = fetchInputAsList();
+        inputArry = fetchInputAsArry();
     }
 
-    protected void loadInputAsStrings(String path) {
-        try (Stream<String> stream = Files.lines(Paths.get(path))) {
-            inputList = stream.collect(Collectors.toList());
+    protected List<String> fetchInputAsList() {
+        try (Stream<String> stream = Files.lines(Paths.get(FILE_PATH.replaceAll(YEAR, String.valueOf(year)).
+            replaceAll(DAY, String.valueOf(day))))) {
+            return stream.collect(Collectors.toList());
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
         }
+        return null;
+    }
+
+    protected String[] fetchInputAsArry(String delimiter) {
+        return getResourceAsString().split(delimiter);
+    }
+
+    protected String[] fetchInputAsArry() {
+        return fetchInputAsArry(DEFAULT_DELIMITER);
     }
 
     protected String getResourceAsString() {
