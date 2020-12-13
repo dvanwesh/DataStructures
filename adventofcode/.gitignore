@@ -161,3 +161,8 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/java,macos,intellij
 
+../.gradle/
+../.idea/libraries/
+../gradle/
+../gradlew
+../gradlew.bat
