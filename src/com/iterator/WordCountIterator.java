@@ -1,6 +1,6 @@
 package com.iterator;
 
-import javafx.util.Pair;
+import com.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,7 +48,8 @@ public class WordCountIterator {
         } else {
             count--;
         }
-        return new Pair<>(ret, count);
+        Pair<String, Integer> res = new Pair(ret, count);
+        return res;
     }
 
 

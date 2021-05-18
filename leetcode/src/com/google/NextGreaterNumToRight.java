@@ -1,6 +1,6 @@
 package com.google;
 
-import javafx.util.Pair;
+import com.utils.Pair;
 
 import java.util.Arrays;
 import java.util.Random;

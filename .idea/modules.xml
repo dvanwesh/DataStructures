@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DataStructures.iml" filepath="$PROJECT_DIR$/DataStructures.iml" />
-      <module fileurl="file://$PROJECT_DIR$/adventofcode/adventofcode.iml" filepath="$PROJECT_DIR$/adventofcode/adventofcode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/leetcode.iml" filepath="$PROJECT_DIR$/.idea/modules/leetcode.iml" />
     </modules>
   </component>
 </project>

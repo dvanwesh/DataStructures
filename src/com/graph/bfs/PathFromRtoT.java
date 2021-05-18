@@ -6,16 +6,16 @@ import java.util.Queue;
 /**
  * Given a 2D array of characters ('-' , 'X' , 'R' , 'T'), find out whether
  * there is a path from the robot 'R' to the target 'T'. The robot can move up,
- * down, left or right. Cells marked with 'X' are…
- * 
+ * down, left or right. Cells marked with 'X' are
+ *
  * @author vdatla
- * 
+ *
  */
 class Point{
 	int x;
 	int y;
 	Point parent;
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
